@@ -11,6 +11,6 @@
     name: Faker::Restaurant.name,
     address: "#{Faker::Address.street_address} #{Faker::Address.city}, UK",
     phone_number: Faker::PhoneNumber.cell_phone_with_country_code,
-    category: %w[chinese italian japanese french belgian].sample
+    category: %w[Chinese Italian Japanese French Belgian].sample
   )
 end

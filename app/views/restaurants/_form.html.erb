@@ -1,0 +1,9 @@
+<div class="form-div">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name, input_html: { placeholder: 'Title' }, label: false %>
+    <%= f.input :address, input_html: { placeholder: 'Address' }, label: false %>
+    <%= f.input :phone_number, input_html: { placeholder: 'Phone Number' }, label: false %>
+    <%= f.input :category, collection: ['Chinese', 'Italian', 'Japanese', 'French', 'Belgian'], label: false, prompt: "Category" %>
+    <%= f.button :submit, class: "btn-outline-success" %>
+  <% end %>
+</div>

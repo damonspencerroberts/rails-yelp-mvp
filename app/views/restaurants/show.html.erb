@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="py-4 d-flex justify-content-start">
+    <div>
+      <h1><%= @restaurant.name %></h1>
+      <hr>
+      <p><%= @restaurant.address %></p>
+      <p><%= @restaurant.phone_number %></p>
+      <p><%= @restaurant.category %></p>
+    </div>
+  </div>
+  <div>
+    <h3>Reviews</h3>
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item my-2">
+          <p><%= review.content %></p>
+          <p>Rating: <%= review.rating %></p>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "Write a review", new_restaurant_review_path(@restaurant) %>
+  </div>
+</div>
