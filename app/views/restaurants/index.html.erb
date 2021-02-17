@@ -4,9 +4,12 @@
   </div>
   <div class="parent">
     <% @restaurants.each do |rest| %>
-      <%= link_to restaurant_path(rest) do %>
+      <%= link_to restaurant_path(rest), class: "text-decoration-none" do %>
         <div class = "m-3 p-3 border shadow-sm rounded w-100">
-          <%= rest.name %>
+          <h3><%= rest.name %></h3>
+          <% ratings_arr = rest.reviews.map { |rev| rev.rating } %>
+          <% rev_rev = ratings_arr.size == 1 ? "review" : "review" %>
+          <p><%= rest.reviews.size.zero? ? "No Ratings" : "Average Rating: #{ratings_arr.reduce(0, :+)/ratings_arr.size.to_f} (#{ratings_arr.size} #{rev_rev})" %></p>
         </div>
       <% end %>
     <% end %>
